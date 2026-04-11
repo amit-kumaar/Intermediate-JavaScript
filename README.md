@@ -40,30 +40,30 @@ flowchart TD
 
 > Model real-world things using objects, classes, and inheritance.
 
+📖 **[→ Full OOP Notes & Examples](./Object-Oriented/README.md)**
+
 ```mermaid
-classDiagram
-    class Animal {
-        +String name
-        +speak()
-    }
-    class Dog {
-        +fetch()
-    }
-    class Cat {
-        +purr()
-    }
-    Animal <|-- Dog
-    Animal <|-- Cat
+flowchart TD
+    B1[📦 Objects in Depth] --> B2[⚙️ Functions at Runtime]
+    B2 --> B3[🏛️ Classes & Objects]
+    B3 --> B4[🎨 OOP Design Patterns]
+    B4 --> B5[🦕 Project: Dinosaurs]
+
+    style B1 fill:#FF9800,color:#fff
+    style B2 fill:#9C27B0,color:#fff
+    style B3 fill:#F44336,color:#fff
+    style B4 fill:#00BCD4,color:#fff
+    style B5 fill:#795548,color:#fff
 ```
 
 ### Key Concepts
-| Concept | Description |
+| Topic | Description |
 |---|---|
-| 🧱 Classes & Objects | Blueprints for creating objects |
-| 🔒 Encapsulation | Bundling data and methods together |
-| 🧬 Inheritance | Child class extends parent class |
-| 🎭 Polymorphism | Same method, different behavior |
-| 🔗 Prototypes | JavaScript's native inheritance model |
+| 📦 Objects in Depth | Create, access, modify & iterate objects |
+| ⚙️ Functions at Runtime | First-class functions, scope, closures, IIFE |
+| 🏛️ Classes & Objects | Blueprints, constructors, prototypal inheritance |
+| 🎨 OOP Design Patterns | Factory functions, mixins, private fields |
+| 🦕 Project: Dinosaurs | Build a dino infographic app with OOP |
 
 ---
 
