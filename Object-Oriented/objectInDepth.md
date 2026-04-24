@@ -333,7 +333,7 @@ pie title Objects in Depth
 
 <div align="center">
 
-**Next → [⚙️ Functions at Runtime](./README.md)**
+**Next → [⚙️ Functions at Runtime](./functionAtRuntime.md)**
 
 `objects` • `methods` • `this` • `globals` • `Object.keys`
 
