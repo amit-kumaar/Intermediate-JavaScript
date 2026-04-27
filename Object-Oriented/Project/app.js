@@ -37,7 +37,7 @@ class Dino{
     compareDiet(human){
         return this.diet.toLowerCase() === human.diet.toLowerCase()
             ? `${this.species} shares your ${this.diet} diet!`
-            : `${human.species} is a ${this.diet}, but you are a ${human.diet}.`;
+            : `${human.name} is a ${human.diet}, but ${this.species} is a ${this.diet}.`;
     }
 }
 
@@ -49,7 +49,8 @@ const dinos=[
     new Dino("Brachiosaurus", 70000, 372, "herbavor", "North America", "Late Jurasic", "The longest neck of any known dinosaur"),
     new Dino("Stegosaurus", 11600, 79, "herbavor", "North America", "Late Jurasic", "The largest of the Stegosaurs"),
     new Dino("Elasmosaurus", 10000, 55, "carnivor", "North America", "Late Cretaceous", "The longest neck of any known marine reptile"),
-
+    new Dino("Pteranodon", 44, 20, "carnivor", "North America", "Late Cretaceous", "Actually a flying reptile, the Pteranodon is not a dinosaur."),
+    new Dino("Pigeon", 0.5, 9, "herbavor", "World Wide", "Holocene", "All birds are Dinosaurs.")
 ]
 
     // Create Human Object
@@ -67,7 +68,7 @@ const getHumanData = (function(){
         human.feet=parseInt(document.getElementById('feet').value);
         human.inches=parseInt(document.getElementById('inches').value);
         human.weight=parseInt(document.getElementById('weight').value);
-        human.diet=document.getElementById('diet').value;
+        human.diet=document.getElementById('diet').value.toLowerCase();
     }
 })();
 
@@ -100,7 +101,7 @@ const getHumanData = (function(){
                 ];
                 const fact =
                   creature.species === "Pigeon"
-                    ? "All birds are considered dinosaurs."
+                    ? "All birds are Dinosaurs."
                     : facts[Math.floor(Math.random() * facts.length)];
 
                 const imgName = encodeURIComponent(creature.species.toLowerCase());
@@ -122,6 +123,16 @@ const getHumanData = (function(){
 
 // On button click, prepare and display infographic
 document.getElementById("btn").addEventListener("click", () => {
+  const name = document.getElementById('name').value.trim();
+  const feet = document.getElementById('feet').value;
+  const inches = document.getElementById('inches').value;
+  const weight = document.getElementById('weight').value;
+
+  if (!name || !feet || !inches || !weight) {
+    alert('Please fill in all fields before comparing!');
+    return;
+  }
+
   getHumanData();
   generateTiles();
   document.getElementById("dino-compare").style.display = "none";
